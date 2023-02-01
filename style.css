@@ -11,38 +11,40 @@ body {
 
 .section {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
 }
 
 .container {
-  width: 350px;
+  width: 700px;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  margin-top: 20px;
+  margin-top: 30px;
 }
 
 #card1 {
   width: 100%;
-  padding: 30px 20px;
+  padding: 10px 10px;
   border: 1px solid black;
   box-shadow: 0 20px 30px rgba(0, 0, 0, 0.15);
   border-radius: 10px;
+  margin-left: 20px;
 }
 
 #card {
   width: 100%;
-  padding: 30px 20px;
+  padding: 10px 10px;
   border: 1px solid black;
   box-shadow: 0 20px 30px rgba(0, 0, 0, 0.15);
   border-radius: 10px;
+  margin-right: 20px;
 }
 
 #card img {
   display: block;
   width: 200px;
-  max-height: 200px;
+  max-height: 180px;
   position: relative;
   margin: 20px auto;
 }
@@ -50,7 +52,7 @@ body {
 #card1 img {
   display: block;
   width: 200px;
-  max-height: 200px;
+  max-height: 180px;
   position: relative;
   margin: 20px auto;
 }
@@ -83,7 +85,8 @@ body {
 }
 
 .hp span,
-.types span {
+.types span,
+.types1 span {
   font-size: 12px;
   letter-spacing: 0.4px;
   font-weight: 600;
@@ -133,4 +136,5 @@ body {
   margin: 30px auto;
   border: none;
   border-radius: 5px;
+  cursor: pointer;
 }

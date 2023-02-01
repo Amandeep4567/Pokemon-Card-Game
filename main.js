@@ -67,7 +67,7 @@ let generateCard1 = (data) => {
   console.log(data);
 
   const hp1 = data.stats[0].base_stat;
-  const imgSrc1 = data.sprites.other.dream_world.front_default;
+  const imgSrc1 = data.sprites.other.home.front_default;
   const pokeName1 = data.name[0].toUpperCase() + data.name.slice(1);
   const statAttack1 = data.stats[1].base_stat;
   const statDefense1 = data.stats[2].base_stat;
@@ -79,6 +79,7 @@ let generateCard1 = (data) => {
   console.log(themeColor1);
 
   card1.innerHTML = `
+  <h2>Player 2</h2>
   <p class="hp">
                 <span>HP</span>
                 ${hp1}
@@ -137,6 +138,7 @@ let generateCard = (data) => {
   console.log(themeColor);
 
   card.innerHTML = `
+  <h2>Player 1</h2>
   <p class="hp">
                 <span>HP</span>
                 ${hp}
@@ -179,7 +181,7 @@ let generateCard = (data) => {
 let appendTypes1 = (types) => {
   console.log(types);
   types.forEach((item) => {
-    let span1 = document.createElement("span1");
+    let span1 = document.createElement("span");
     span1.textContent = item.type.name;
     console.log(span1);
     document.querySelector(".types1").appendChild(span1);
@@ -198,7 +200,7 @@ let appendTypes = (types) => {
 
 let styleCard1 = (color) => {
   card1.style.background = `radial-gradient(circle at 50% 0%, ${color} 36%, #ffffff 36%)`;
-  card1.querySelectorAll("types1 span1").forEach((typeColor) => {
+  card1.querySelectorAll(".types1 span").forEach((typeColor) => {
     typeColor.style.background = color;
   });
 };
