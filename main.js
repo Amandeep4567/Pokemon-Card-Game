@@ -35,6 +35,13 @@ const url1 = " https://pokeapi.co/api/v2/pokemon/";
 const card = document.getElementById("card");
 const card1 = document.getElementById("card1");
 const btn = document.getElementById("btn");
+const result = document.querySelector(".result");
+const result1 = document.querySelector(".result1");
+const btn1 = document.querySelector(".btn1");
+const btn2 = document.querySelector(".btn2");
+const btn3 = document.querySelector(".btn3");
+const btn4 = document.querySelector(".btn4");
+const btn5 = document.querySelector(".btn5");
 
 let pokemonData = () => {
   // Generate a random number between 1 and 150
@@ -63,17 +70,26 @@ let pokemonData1 = () => {
     });
 };
 
+let pokeName1;
+let statAttack1;
+let statDefense1;
+let statSpecialAttack1;
+let statSpecialDefense1;
+let statSpeed1;
+
 let generateCard1 = (data) => {
   console.log(data);
 
   const hp1 = data.stats[0].base_stat;
+  console.log(hp1);
   const imgSrc1 = data.sprites.other.home.front_default;
-  const pokeName1 = data.name[0].toUpperCase() + data.name.slice(1);
-  const statAttack1 = data.stats[1].base_stat;
-  const statDefense1 = data.stats[2].base_stat;
-  const statSpecialAttack1 = data.stats[3].base_stat;
-  const statSpecialDefense1 = data.stats[4].base_stat;
-  const statSpeed1 = data.stats[5].base_stat;
+  pokeName1 = data.name[0].toUpperCase() + data.name.slice(1);
+  statAttack1 = data.stats[1].base_stat;
+  console.log(statAttack1);
+  statDefense1 = data.stats[2].base_stat;
+  statSpecialAttack1 = data.stats[3].base_stat;
+  statSpecialDefense1 = data.stats[4].base_stat;
+  statSpeed1 = data.stats[5].base_stat;
 
   const themeColor1 = typeColor[data.types[0].type.name];
   console.log(themeColor1);
@@ -119,6 +135,13 @@ let generateCard1 = (data) => {
   styleCard1(themeColor1);
 };
 
+let pokeName;
+let statAttack;
+let statDefense;
+let statSpecialAttack;
+let statSpecialDefense;
+let statSpeed;
+
 // Generate Card
 let generateCard = (data) => {
   // Get necessary data and assign it to the variables
@@ -126,12 +149,12 @@ let generateCard = (data) => {
 
   const hp = data.stats[0].base_stat;
   const imgSrc = data.sprites.other.home.front_default;
-  const pokeName = data.name[0].toUpperCase() + data.name.slice(1);
-  const statAttack = data.stats[1].base_stat;
-  const statDefense = data.stats[2].base_stat;
-  const statSpecialAttack = data.stats[3].base_stat;
-  const statSpecialDefense = data.stats[4].base_stat;
-  const statSpeed = data.stats[5].base_stat;
+  pokeName = data.name[0].toUpperCase() + data.name.slice(1);
+  statAttack = data.stats[1].base_stat;
+  statDefense = data.stats[2].base_stat;
+  statSpecialAttack = data.stats[3].base_stat;
+  statSpecialDefense = data.stats[4].base_stat;
+  statSpeed = data.stats[5].base_stat;
 
   // Set themeColor based on Pokemon type
   const themeColor = typeColor[data.types[0].type.name];
@@ -216,3 +239,63 @@ btn.addEventListener("click", pokemonData);
 btn.addEventListener("click", pokemonData1);
 window.addEventListener("load", pokemonData);
 window.addEventListener("load", pokemonData1);
+
+btn1.addEventListener("click", () => {
+  if (statAttack > statAttack1) {
+    result.innerHTML = `${pokeName} Won`;
+    result1.innerHTML = `${pokeName1} Loose`;
+  } else if (statAttack < statAttack1) {
+    result.innerHTML = `${pokeName} Loose`;
+    result1.innerHTML = `${pokeName1} Won`;
+  } else {
+    result.innerHTML = "Draw";
+  }
+});
+
+btn2.addEventListener("click", () => {
+  if (statDefense > statDefense1) {
+    result.innerHTML = `${pokeName} Won`;
+    result1.innerHTML = `${pokeName1} Loose`;
+  } else if (statDefense < statDefense1) {
+    result.innerHTML = `${pokeName} Loose`;
+    result1.innerHTML = `${pokeName1} Won`;
+  } else {
+    result.innerHTML = "Draw";
+  }
+});
+
+btn3.addEventListener("click", () => {
+  if (statSpeed > statSpeed1) {
+    result.innerHTML = `${pokeName} Won`;
+    result1.innerHTML = `${pokeName1} Loose`;
+  } else if (statSpeed < statSpeed1) {
+    result.innerHTML = `${pokeName} Loose`;
+    result1.innerHTML = `${pokeName1} Won`;
+  } else {
+    result.innerHTML = "Draw";
+  }
+});
+
+btn4.addEventListener("click", () => {
+  if (statSpecialAttack > statSpecialAttack1) {
+    result.innerHTML = `${pokeName} Won`;
+    result1.innerHTML = `${pokeName1} Loose`;
+  } else if (statSpecialAttack < statSpecialAttack1) {
+    result.innerHTML = `${pokeName} Loose`;
+    result1.innerHTML = `${pokeName1} Won`;
+  } else {
+    result.innerHTML = "Draw";
+  }
+});
+
+btn5.addEventListener("click", () => {
+  if (statSpecialDefense > statSpecialDefense1) {
+    result.innerHTML = `${pokeName} Won`;
+    result1.innerHTML = `${pokeName1} Loose`;
+  } else if (statSpecialDefense < statSpecialDefense1) {
+    result.innerHTML = `${pokeName} Loose`;
+    result1.innerHTML = `${pokeName1} Won`;
+  } else {
+    result.innerHTML = "Draw";
+  }
+});
