@@ -15,12 +15,12 @@ body {
 }
 
 .container {
-  width: 700px;
+  width: 1000px;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  margin-top: 300px;
+  margin-top: 40px;
 }
 
 #card1 {
@@ -29,7 +29,7 @@ body {
   border: 1px solid black;
   box-shadow: 0 20px 30px rgba(0, 0, 0, 0.15);
   border-radius: 10px;
-  margin-left: 20px;
+  margin-left: 150px;
 }
 
 #card {
@@ -38,7 +38,7 @@ body {
   border: 1px solid black;
   box-shadow: 0 20px 30px rgba(0, 0, 0, 0.15);
   border-radius: 10px;
-  margin-right: 20px;
+  margin-right: 150px;
 }
 
 #card img {
@@ -134,7 +134,7 @@ body {
 
 #btn {
   display: block;
-  padding: 15px 60px;
+  padding: 2px 50px;
   font-size: 18px;
   background-color: #101010;
   color: #ffffff;
@@ -143,6 +143,17 @@ body {
   border: none;
   border-radius: 5px;
   cursor: pointer;
+}
+
+#btn img {
+  width: 50px;
+}
+
+.btn_section {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .btn1,

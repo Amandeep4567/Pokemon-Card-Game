@@ -240,6 +240,12 @@ btn.addEventListener("click", pokemonData1);
 window.addEventListener("load", pokemonData);
 window.addEventListener("load", pokemonData1);
 
+// btn.addEventListener("click", () => {
+//   setInterval(() => {
+//     document.querySelector(".result").value = "";
+//   }, 2000);
+// });
+
 btn1.addEventListener("click", () => {
   if (statAttack > statAttack1) {
     result.innerHTML = `${pokeName} Won`;
