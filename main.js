@@ -45,7 +45,7 @@ const btn5 = document.querySelector(".btn5");
 
 let pokemonData = () => {
   // Generate a random number between 1 and 150
-  let id = Math.floor(Math.random() * 150) + 1;
+  let id = Math.floor(Math.random() * 200) + 1;
 
   // Combine the pokeapi url with pokemon id
   const finalUrl = url + id;
@@ -60,7 +60,7 @@ let pokemonData = () => {
 };
 
 let pokemonData1 = () => {
-  let id1 = Math.floor(Math.random() * 150) + 1;
+  let id1 = Math.floor(Math.random() * 200) + 1;
   const finalUrl1 = url1 + id1;
 
   fetch(finalUrl1)
@@ -95,7 +95,7 @@ let generateCard1 = (data) => {
   console.log(themeColor1);
 
   card1.innerHTML = `
-  <h2>Player 2</h2>
+  <h2 class="player">Player 2</h2>
   <p class="hp">
                 <span>HP</span>
                 ${hp1}
@@ -161,7 +161,7 @@ let generateCard = (data) => {
   console.log(themeColor);
 
   card.innerHTML = `
-  <h2>Player 1</h2>
+  <h2 class="player">Player 1</h2>
   <p class="hp">
                 <span>HP</span>
                 ${hp}
