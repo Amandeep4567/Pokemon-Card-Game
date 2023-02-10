@@ -225,6 +225,7 @@ let styleCard1 = (color) => {
   card1.style.background = `radial-gradient(circle at 50% 0%, ${color} 36%, #ffffff 36%)`;
   card1.querySelectorAll(".types1 span").forEach((typeColor) => {
     typeColor.style.background = color;
+    result1.style.background = color;
   });
 };
 
@@ -232,6 +233,7 @@ let styleCard = (color) => {
   card.style.background = `radial-gradient(circle at 50% 0%, ${color} 36%, #ffffff 36%)`;
   card.querySelectorAll(".types SPAN").forEach((typeColor) => {
     typeColor.style.background = color;
+    result.style.background = color;
   });
 };
 
@@ -253,8 +255,9 @@ btn1.addEventListener("click", () => {
   } else if (statAttack < statAttack1) {
     result.innerHTML = `${pokeName} Loose`;
     result1.innerHTML = `${pokeName1} Won`;
-  } else {
+  } else if (statAttack === statAttack1) {
     result.innerHTML = "Draw";
+    result1.innerHTML = "Draw";
   }
 });
 
@@ -265,8 +268,9 @@ btn2.addEventListener("click", () => {
   } else if (statDefense < statDefense1) {
     result.innerHTML = `${pokeName} Loose`;
     result1.innerHTML = `${pokeName1} Won`;
-  } else {
+  } else if (statDefense === statDefense1) {
     result.innerHTML = "Draw";
+    result1.innerHTML = "Draw";
   }
 });
 
@@ -277,8 +281,9 @@ btn3.addEventListener("click", () => {
   } else if (statSpeed < statSpeed1) {
     result.innerHTML = `${pokeName} Loose`;
     result1.innerHTML = `${pokeName1} Won`;
-  } else {
+  } else if (statSpeed === statSpeed1) {
     result.innerHTML = "Draw";
+    result1.innerHTML = "Draw";
   }
 });
 
@@ -289,8 +294,9 @@ btn4.addEventListener("click", () => {
   } else if (statSpecialAttack < statSpecialAttack1) {
     result.innerHTML = `${pokeName} Loose`;
     result1.innerHTML = `${pokeName1} Won`;
-  } else {
+  } else if (statSpecialAttack === statSpecialAttack1) {
     result.innerHTML = "Draw";
+    result1.innerHTML = "Draw";
   }
 });
 
@@ -301,7 +307,8 @@ btn5.addEventListener("click", () => {
   } else if (statSpecialDefense < statSpecialDefense1) {
     result.innerHTML = `${pokeName} Loose`;
     result1.innerHTML = `${pokeName1} Won`;
-  } else {
+  } else if (statSpecialDefense === statSpecialDefense1) {
     result.innerHTML = "Draw";
+    result1.innerHTML = "Draw";
   }
 });

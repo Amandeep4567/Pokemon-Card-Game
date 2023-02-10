@@ -143,8 +143,19 @@ body {
 .result,
 .result1 {
   font-size: 25px;
-  color: #ffffff;
   font-weight: 400;
+  color: #ffffff;
+}
+
+.result {
+  border-radius: 4px;
+  padding: 4px;
+}
+
+.result1 {
+  border-radius: 4px;
+  margin-left: 600px;
+  padding: 4px;
 }
 
 #btn {
@@ -160,8 +171,21 @@ body {
   cursor: pointer;
 }
 
+.triangle {
+}
+
 #btn img {
   width: 50px;
+  animation: rotation 5s infinite linear;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .btn_section {
@@ -177,13 +201,12 @@ body {
 .btn4,
 .btn5 {
   display: block;
-  padding: 15px 60px;
-  font-size: 18px;
+  padding: 5px 30px;
   background-color: #101010;
   color: #ffffff;
   position: relative;
   margin: 30px auto;
   border: none;
-  border-radius: 5px;
+  border-radius: 50%;
   cursor: pointer;
 }
