@@ -1,16 +1,3 @@
-// const options = {
-//   method: "GET",
-//   headers: {
-//     "X-RapidAPI-Key": "4be0d4b77bmshf08173011add6ffp1676b1jsnfed889428788",
-//     "X-RapidAPI-Host": "pokemon-go1.p.rapidapi.com",
-//   },
-// };
-
-// fetch("https://pokemon-go1.p.rapidapi.com/pokemon_evolutions.json", options)
-//   .then((response) => response.json())
-//   .then((response) => console.log(response))
-//   .catch((err) => console.error(err));
-
 const typeColor = {
   bug: "#26de81",
   dragon: "#ffeaa7",
