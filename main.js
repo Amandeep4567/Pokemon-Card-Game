@@ -45,7 +45,7 @@ const btn5 = document.querySelector(".btn5");
 
 let pokemonData = () => {
   // Generate a random number between 1 and 150
-  let id = Math.floor(Math.random() * 200) + 1;
+  let id = Math.floor(Math.random() * 500) + 1;
 
   // Combine the pokeapi url with pokemon id
   const finalUrl = url + id;
@@ -60,7 +60,7 @@ let pokemonData = () => {
 };
 
 let pokemonData1 = () => {
-  let id1 = Math.floor(Math.random() * 200) + 1;
+  let id1 = Math.floor(Math.random() * 500) + 1;
   const finalUrl1 = url1 + id1;
 
   fetch(finalUrl1)
@@ -237,27 +237,52 @@ let styleCard = (color) => {
   });
 };
 
-btn.addEventListener("click", pokemonData);
-btn.addEventListener("click", pokemonData1);
+btn.addEventListener("click", () => {
+  pokemonData();
+  btn1.disabled = false;
+  btn2.disabled = false;
+  btn3.disabled = false;
+  btn4.disabled = false;
+  btn5.disabled = false;
+});
+btn.addEventListener("click", () => {
+  pokemonData1();
+  btn1.disabled = false;
+  btn2.disabled = false;
+  btn3.disabled = false;
+  btn4.disabled = false;
+  btn5.disabled = false;
+});
 window.addEventListener("load", pokemonData);
 window.addEventListener("load", pokemonData1);
 
-// btn.addEventListener("click", () => {
-//   setInterval(() => {
-//     document.querySelector(".result").value = "";
-//   }, 2000);
-// });
+btn.addEventListener("click", () => {
+  result.textContent = " ";
+  result1.textContent = " ";
+});
 
 btn1.addEventListener("click", () => {
   if (statAttack > statAttack1) {
     result.innerHTML = `${pokeName} Won`;
     result1.innerHTML = `${pokeName1} Loose`;
+    btn2.disabled = true;
+    btn3.disabled = true;
+    btn4.disabled = true;
+    btn5.disabled = true;
   } else if (statAttack < statAttack1) {
     result.innerHTML = `${pokeName} Loose`;
     result1.innerHTML = `${pokeName1} Won`;
+    btn2.disabled = true;
+    btn3.disabled = true;
+    btn4.disabled = true;
+    btn5.disabled = true;
   } else if (statAttack === statAttack1) {
     result.innerHTML = "Draw";
     result1.innerHTML = "Draw";
+    btn2.disabled = true;
+    btn3.disabled = true;
+    btn4.disabled = true;
+    btn5.disabled = true;
   }
 });
 
@@ -265,12 +290,24 @@ btn2.addEventListener("click", () => {
   if (statDefense > statDefense1) {
     result.innerHTML = `${pokeName} Won`;
     result1.innerHTML = `${pokeName1} Loose`;
+    btn1.disabled = true;
+    btn3.disabled = true;
+    btn4.disabled = true;
+    btn5.disabled = true;
   } else if (statDefense < statDefense1) {
     result.innerHTML = `${pokeName} Loose`;
     result1.innerHTML = `${pokeName1} Won`;
+    btn1.disabled = true;
+    btn3.disabled = true;
+    btn4.disabled = true;
+    btn5.disabled = true;
   } else if (statDefense === statDefense1) {
     result.innerHTML = "Draw";
     result1.innerHTML = "Draw";
+    btn1.disabled = true;
+    btn3.disabled = true;
+    btn4.disabled = true;
+    btn5.disabled = true;
   }
 });
 
@@ -278,12 +315,24 @@ btn3.addEventListener("click", () => {
   if (statSpeed > statSpeed1) {
     result.innerHTML = `${pokeName} Won`;
     result1.innerHTML = `${pokeName1} Loose`;
+    btn1.disabled = true;
+    btn2.disabled = true;
+    btn4.disabled = true;
+    btn5.disabled = true;
   } else if (statSpeed < statSpeed1) {
     result.innerHTML = `${pokeName} Loose`;
     result1.innerHTML = `${pokeName1} Won`;
+    btn1.disabled = true;
+    btn2.disabled = true;
+    btn4.disabled = true;
+    btn5.disabled = true;
   } else if (statSpeed === statSpeed1) {
     result.innerHTML = "Draw";
     result1.innerHTML = "Draw";
+    btn1.disabled = true;
+    btn2.disabled = true;
+    btn4.disabled = true;
+    btn5.disabled = true;
   }
 });
 
@@ -291,12 +340,24 @@ btn4.addEventListener("click", () => {
   if (statSpecialAttack > statSpecialAttack1) {
     result.innerHTML = `${pokeName} Won`;
     result1.innerHTML = `${pokeName1} Loose`;
+    btn1.disabled = true;
+    btn2.disabled = true;
+    btn3.disabled = true;
+    btn5.disabled = true;
   } else if (statSpecialAttack < statSpecialAttack1) {
     result.innerHTML = `${pokeName} Loose`;
     result1.innerHTML = `${pokeName1} Won`;
+    btn1.disabled = true;
+    btn2.disabled = true;
+    btn3.disabled = true;
+    btn5.disabled = true;
   } else if (statSpecialAttack === statSpecialAttack1) {
     result.innerHTML = "Draw";
     result1.innerHTML = "Draw";
+    btn1.disabled = true;
+    btn2.disabled = true;
+    btn3.disabled = true;
+    btn5.disabled = true;
   }
 });
 
@@ -304,11 +365,23 @@ btn5.addEventListener("click", () => {
   if (statSpecialDefense > statSpecialDefense1) {
     result.innerHTML = `${pokeName} Won`;
     result1.innerHTML = `${pokeName1} Loose`;
+    btn1.disabled = true;
+    btn2.disabled = true;
+    btn3.disabled = true;
+    btn4.disabled = true;
   } else if (statSpecialDefense < statSpecialDefense1) {
     result.innerHTML = `${pokeName} Loose`;
     result1.innerHTML = `${pokeName1} Won`;
+    btn1.disabled = true;
+    btn2.disabled = true;
+    btn3.disabled = true;
+    btn4.disabled = true;
   } else if (statSpecialDefense === statSpecialDefense1) {
     result.innerHTML = "Draw";
     result1.innerHTML = "Draw";
+    btn1.disabled = true;
+    btn2.disabled = true;
+    btn3.disabled = true;
+    btn4.disabled = true;
   }
 });
